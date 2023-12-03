@@ -1,5 +1,12 @@
 <?php
 
+session_start();
+
+if (!isset($_SESSION["ssLoginPOS"])) {
+    header("location: ../auth/login.php");
+    exit();
+}
+
 require_once "config.php";
 
 $title = "Dashboard - Universitas Primagraha";
